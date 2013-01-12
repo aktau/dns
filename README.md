@@ -1,4 +1,4 @@
 dns
 ===
 
-DNS configurations for LuaDNS
+My personal DNS configurations for LuaDNS.
