@@ -1,4 +1,4 @@
-function github_pages(domain, github_username)
+function github_pages(domain, username)
 	-- Create CNAME for www.yourdomain.com pointing to user.github.com
 	cname(concat("www", domain), concat(username, "github.com"))
 
