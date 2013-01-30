@@ -7,4 +7,4 @@ github_pages(_a, "aktau")
 
 -- setup mailing via outlook.com, can't use google apps basic because
 -- that isn't free anymore
-outlook_mail(_a)
+outlook_mail(_a, config()[_a])
