@@ -1,4 +1,5 @@
-function config()
+-- cheap "hack" to get some kind of centralized configuration going
+function config(domain)
 	local m = { }
 
 	m["aktau.be"] = {
@@ -13,7 +14,7 @@ function config()
 		ownership = "v=msv1 t=b164dce097b240439a587cae807528"
 	}
 
-	return m
+	return m[domain]
 end
 
 function github_pages(domain, username)
