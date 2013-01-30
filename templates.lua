@@ -27,7 +27,7 @@ end
 function outlook_mail(domain, config)
 	-- mail setup
 	-- To set up mail and prove ownership of this domain, you must create an MX record.
-	mx(domain, config.mx[0], 10)
+	mx(domain, config.mx[1], 10)
 
 	-- server trust
 	-- Create a TXT record to allow other mail servers to trust email originating from your domain.
