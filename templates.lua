@@ -19,7 +19,7 @@ end
 
 function github_pages(domain, username)
     -- Create CNAME for www.yourdomain.com pointing to user.github.com
-    cname(concat("www", domain), concat(username, "github.com"))
+    cname(concat("www", domain), concat(username, "github.io"))
 
     -- Create A records for root/naked domain (yourdomain.com)
     a(domain, "204.232.175.78")
