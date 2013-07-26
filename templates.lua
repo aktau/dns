@@ -10,7 +10,7 @@ function config(domain)
 
 	m["hillegeer.com"] = {
 		mx = { "b164dce097b240439a587cae807528.pamx1.hotmail.com" },
-		trust = "v=spf1 include:hotmail.com ~all",
+		trust = "v=spf1 a mx a:google.com include:_spf.google.com include:hotmail.com ~all",
 		ownership = "v=msv1 t=b164dce097b240439a587cae807528"
 	}
 
@@ -33,7 +33,8 @@ function outlook_mail(domain, config)
 	-- server trust
 	-- Create a TXT record to allow other mail servers to trust email originating from your domain.
 	-- Also known as sender ID configuration, this setting will help prevent your mail from being marked as junk mail.
-	txt(domain, config.trust)
+	-- txt(domain, config.trust)
+    spf(domain, config.trust)
 
 	-- prove domain ownership
 	-- If you would like to prove the ownership of domain and create users
