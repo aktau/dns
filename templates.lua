@@ -33,7 +33,7 @@ function outlook_mail(domain, config)
     -- server trust
     -- Create a TXT record to allow other mail servers to trust email originating from your domain.
     -- Also known as sender ID configuration, this setting will help prevent your mail from being marked as junk mail.
-    -- txt(domain, config.trust)
+    txt(domain, config.trust)
     spf(domain, config.trust)
 
     -- prove domain ownership
