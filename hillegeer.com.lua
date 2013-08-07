@@ -3,7 +3,7 @@
 -- _a = example.com
 
 -- replace github-username with your username
-github_pages(_a, "aktau")
+github_pages(_a, "hillegeer")
 
 -- setup mailing via outlook.com, can't use google apps basic because
 -- that isn't free anymore
