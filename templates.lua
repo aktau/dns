@@ -54,3 +54,18 @@ function outlook_mail(domain, config)
     -- (so basically this is redundant, I'm doing it anyway)
     txt(domain, config.ownership)
 end
+
+function google_app(domain)
+    -- mail exchangers
+    mx(domain, "aspmx.l.google.com", 1, 3600)
+    mx(domain, "alt1.aspmx.l.google.com", 5, 3600)
+    mx(domain, "alt2.aspmx.l.google.com", 5, 3600)
+    mx(domain, "aspmx2.googlemail.com", 10, 3600)
+    mx(domain, "aspmx3.googlemail.com", 10, 3600)
+    
+    -- mail.domain.com alias
+    cname(concat("mail", domain), "ghs.google.com")
+  
+    -- SPF record
+    spf(domain, "v=spf1 a mx include:_spf.google.com ~all")
+end
