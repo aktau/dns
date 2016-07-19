@@ -17,12 +17,23 @@ function config(domain)
     return m[domain]
 end
 
-function github_pages(domain, username)
+function github_pages(domain, username, use_alias)
+    -- use_alias defaults to true
+    use_alias = use_alias == nil and true or false
+
+    local userpage = concat(username, "github.io")
+
     -- Create CNAME for www.yourdomain.com pointing to user.github.com
-    cname(concat("www", domain), concat(username, "github.io"))
+    cname(concat("www", domain), userpage)
 
     -- Create A records for root/naked domain (yourdomain.com)
-    a(domain, "204.232.175.78")
+    if use_alias then
+        -- Create ALIAS records, which allows the use of github's cdn
+        alias(domain, userpage)
+    else
+        a(domain, "192.30.252.153")
+        a(domain, "192.30.252.154")
+    end
 end
 
 function outlook_mail(domain, config)
