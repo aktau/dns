@@ -5,6 +5,5 @@
 -- replace github-username with your username
 github_pages(_a, "hillegeer")
 
--- setup mailing via outlook.com, can't use google apps basic because
--- that isn't free anymore
-outlook_mail(_a, config(_a))
+-- setup mailing via Google Apps for Work
+google_app(_a)
