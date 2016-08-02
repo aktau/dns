@@ -68,6 +68,7 @@ function google_app(domain)
   
     -- SPF record
     spf(domain, "v=spf1 a mx include:_spf.google.com ~all")
+    txt(domain, "v=spf1 a mx include:_spf.google.com ~all")
     
     -- DKIM record
     txt(concat("google._domainkey", domain), "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqtcPyago5y2YwRXdTv0wO2YxTCuvrvKKUjHUm1R+eH5lEyzB8iR10InbFboBsUDpiRfptpcTPOqpddtSv6/1q4GkNLFDOJk/majVxHjbbLHUMuc2Q9tRpafbcqc+HSjgqCSallaNcLrOrSjv1pXlYnklGTF0KKFixz9mzUOOTf16MZaxBe8Noz99gIvPg0JlyxvNB3lxNADFOC6T1/Aett4jVSPb4fo9TAxkihDEIMvSCUV3Ob5yVVnRGXR3PBTyYpmfVC84r4TTnuYNN8qtXaMvDpSTEY/wT5I94BX2x7+rkVLatRLMD8q3Bylw5GBsS3Qayn3RpQQy/CCfRK4ITQIDAQAB")
